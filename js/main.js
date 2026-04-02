@@ -41,7 +41,15 @@ if (!isMobile) {
   function updateSpacerHeight() {
     spacer.style.height = scroller.scrollHeight + 'px';
   }
+
+  // Wait for fonts & images to load before calculating height
+  // This fixes the "stuck scroll" issue on GitHub Pages
   updateSpacerHeight();
+  window.addEventListener('load', () => {
+    updateSpacerHeight();
+    setTimeout(updateSpacerHeight, 500);
+    setTimeout(updateSpacerHeight, 1500);
+  });
   window.addEventListener('resize', updateSpacerHeight);
   new ResizeObserver(updateSpacerHeight).observe(scroller);
 
