@@ -1,0 +1,22 @@
+# ============================================
+# devZync — Docker Compose
+# Makes running the project even easier!
+# ============================================
+
+version: '3.8'
+
+services:
+  devzync-web:
+    # Build from our Dockerfile in this folder
+    build: .
+
+    # Map port 8080 on your computer → port 80 in container
+    # So you visit: http://localhost:8080
+    ports:
+      - "8080:80"
+
+    # Auto-restart if something crashes
+    restart: unless-stopped
+
+    # Name shown in Docker Desktop
+    container_name: devzync-website

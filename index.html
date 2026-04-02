@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>devZync — We Build. You Grow.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <polygon points="17,2 7,15 13,15 3,26 21,13 15,13 25,2" fill="#C9A96E"/>
+      </svg>
+      <span class="nav-brand">dev<span>Zync</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#services" onclick="closeMobile()">Services</a></li>
+      <li><a href="#work" onclick="closeMobile()">Work</a></li>
+      <li><a href="#about" onclick="closeMobile()">About</a></li>
+      <li><a href="#contact" onclick="closeMobile()">Get a Quote</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text">ZYNC</div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">✦ Web Development & Hosting — Sri Lanka</p>
+      <h1 class="hero-title">
+        We <em>build</em><br/>websites that<br/>work for you.
+      </h1>
+      <p class="hero-sub">Premium websites for small businesses in Sri Lanka. Fast, beautiful, and built to convert visitors into customers.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start Your Project</a>
+        <a href="#work" class="btn-ghost">See Our Work</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <svg viewBox="0 0 120 120" width="120" height="120" class="badge-ring">
+        <path id="circlePath" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none"/>
+        <text font-size="11.5" fill="#C9A96E" font-family="DM Sans, sans-serif" letter-spacing="3">
+          <textPath href="#circlePath">devZync · Sri Lanka · Web &amp; Hosting · </textPath>
+        </text>
+      </svg>
+      <div class="badge-center">
+        <svg width="32" height="32" viewBox="0 0 28 28">
+          <polygon points="17,2 7,15 13,15 3,26 21,13 15,13 25,2" fill="#C9A96E"/>
+        </svg>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Web Design</span><span class="dot">✦</span>
+      <span>Hosting</span><span class="dot">✦</span>
+      <span>Mobile Ready</span><span class="dot">✦</span>
+      <span>Fast Loading</span><span class="dot">✦</span>
+      <span>SEO Ready</span><span class="dot">✦</span>
+      <span>WhatsApp Integration</span><span class="dot">✦</span>
+      <span>Web Design</span><span class="dot">✦</span>
+      <span>Hosting</span><span class="dot">✦</span>
+      <span>Mobile Ready</span><span class="dot">✦</span>
+      <span>Fast Loading</span><span class="dot">✦</span>
+      <span>SEO Ready</span><span class="dot">✦</span>
+      <span>WhatsApp Integration</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">✦ What We Do</p>
+        <h2 class="section-title">Everything your<br/>business needs online.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-index="01">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="2" y="6" width="28" height="20" rx="3" stroke="#C9A96E" stroke-width="1.5"/>
+              <line x1="2" y1="12" x2="30" y2="12" stroke="#C9A96E" stroke-width="1.5"/>
+              <circle cx="6" cy="9" r="1.2" fill="#C9A96E"/>
+              <circle cx="10" cy="9" r="1.2" fill="#C9A96E"/>
+            </svg>
+          </div>
+          <h3>Website Design</h3>
+          <p>Custom-designed websites built to reflect your brand and convert visitors into real customers.</p>
+          <span class="service-tag">From LKR 20,000</span>
+        </div>
+        <div class="service-card" data-index="02">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="10" y="2" width="12" height="20" rx="2" stroke="#C9A96E" stroke-width="1.5"/>
+              <line x1="14" y1="18" x2="18" y2="18" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M6 28h20" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Mobile Ready</h3>
+          <p>Every site we build looks stunning on phones, tablets, and desktops — guaranteed.</p>
+          <span class="service-tag">Included in all plans</span>
+        </div>
+        <div class="service-card" data-index="03">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4C9.4 4 4 9.4 4 16s5.4 12 12 12 12-5.4 12-12S22.6 4 16 4z" stroke="#C9A96E" stroke-width="1.5"/>
+              <path d="M16 4c-3 3-5 7.8-5 12s2 9 5 12M16 4c3 3 5 7.8 5 12s-2 9-5 12" stroke="#C9A96E" stroke-width="1.5"/>
+              <line x1="4" y1="16" x2="28" y2="16" stroke="#C9A96E" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Web Hosting</h3>
+          <p>Reliable, fast hosting with 99.9% uptime. We manage everything — you focus on your business.</p>
+          <span class="service-tag">From LKR 4,500/yr</span>
+        </div>
+        <div class="service-card" data-index="04">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M26 18.5c0 4.1-4.5 7.5-10 7.5S6 22.6 6 18.5c0-2.5 1.6-4.7 4-6.1" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M16 6l3 5h-6l3-5z" stroke="#C9A96E" stroke-width="1.5" stroke-linejoin="round"/>
+              <line x1="16" y1="11" x2="16" y2="20" stroke="#C9A96E" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>SEO Setup</h3>
+          <p>We make sure your business shows up on Google when local customers search for your services.</p>
+          <span class="service-tag">Included in all plans</span>
+        </div>
+        <div class="service-card" data-index="05">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="4" y="8" width="24" height="18" rx="2" stroke="#C9A96E" stroke-width="1.5"/>
+              <path d="M4 14l12 7 12-7" stroke="#C9A96E" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>WhatsApp Integration</h3>
+          <p>Connect your website directly to WhatsApp so customers can reach you with one tap.</p>
+          <span class="service-tag">Quick setup</span>
+        </div>
+        <div class="service-card" data-index="06">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="12" stroke="#C9A96E" stroke-width="1.5"/>
+              <path d="M16 10v6l4 2" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Ongoing Support</h3>
+          <p>We don't disappear after launch. Updates, fixes, and support — we're always here for you.</p>
+          <span class="service-tag">From LKR 3,000/month</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / PORTFOLIO -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">✦ Our Work</p>
+        <h2 class="section-title">Built with purpose.<br/>Designed to impress.</h2>
+      </div>
+      <div class="work-grid">
+        <div class="work-card large">
+          <div class="work-overlay">
+            <span class="work-tag">Hardware Shop</span>
+            <h3>Paramount Enterprises</h3>
+            <p>Manage employees and stock</p>
+          </div>
+          <div class="work-mockup restaurant">
+            <div class="mock-bar"><span></span><span></span><span></span></div>
+            <div class="mock-hero-img">🏬</div>
+            <div class="mock-title">Paramount Enterprises</div>
+            <div class="mock-sub">Hardware Shop Management System</div>
+            <div class="mock-btn">Manage Inventory</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-overlay">
+            <span class="work-tag">E-Commerce</span>
+            <h3>MAQ Shoes</h3>
+            <p>Selling shoes online</p>
+          </div>
+          <div class="work-mockup salon">
+            <div class="mock-bar"><span></span><span></span><span></span></div>
+            <div class="mock-hero-img">👞</div>
+            <div class="mock-title">MAQ Shoes</div>
+            <div class="mock-btn">Shop Now</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-overlay">
+            <span class="work-tag">Web App</span>
+            <h3>Weather Application</h3>
+            <p>Live weather updates</p>
+          </div>
+          <div class="work-mockup retail">
+            <div class="mock-bar"><span></span><span></span><span></span></div>
+            <div class="mock-hero-img">⛅️</div>
+            <div class="mock-title">Weather Application</div>
+            <div class="mock-btn">Check Weather</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Websites Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">99.9%</span>
+          <span class="stat-label">Uptime Guaranteed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">Starting 3 Days</span>
+          <span class="stat-label">Delivery Time</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <div class="about-card-main">
+          <svg width="60" height="60" viewBox="0 0 28 28">
+            <polygon points="17,2 7,15 13,15 3,26 21,13 15,13 25,2" fill="#C9A96E"/>
+          </svg>
+          <p class="about-card-name">devZync</p>
+          <p class="about-card-loc">📍 Sri Lanka</p>
+        </div>
+        <div class="about-card-float">
+          <span>⚡</span> Starting 3-day delivery
+        </div>
+        <div class="about-card-float two">
+          <span>🌐</span> Hosted & live
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-eyebrow">✦ About Us</p>
+        <h2 class="section-title">We believe every<br/>business deserves<br/>to be online.</h2>
+        <p>devZync was born from a simple idea — small businesses in Sri Lanka deserve world-class websites without the world-class price tag.</p>
+        <p>We handle everything from design to hosting so you can focus entirely on running your business.</p>
+        <a href="#contact" class="btn-primary">Let's Work Together</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">✦ Get In Touch</p>
+        <h2 class="section-title">Ready to get your<br/>business online?</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <div>
+              <p class="contact-label">WhatsApp Us</p>
+              <a href="https://wa.me/94762514795" class="contact-value">+94 76 251 4795</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:hello.devzync@gmail.com" class="contact-value">hello.devzync@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <p class="contact-label">Location</p>
+              <p class="contact-value">Sri Lanka 🇱🇰</p>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://instagram.com/devzync.lk" target="_blank" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Facebook</a>
+          </div>
+        </div>
+
+        <!--
+          ✅ CONTACT FORM — Formspree (no JS needed, emails go directly to Gmail)
+          HOW TO ACTIVATE:
+          1. Go to https://formspree.io and sign up FREE with hello.devzync@gmail.com
+          2. Click "New Form" → copy the form ID (looks like: xpzgkrqw)
+          3. Replace "YOUR_FORM_ID" below with your real ID
+          4. Formspree will verify your email once — then every submission lands in your Gmail ✅
+        -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/mlgowjbr"
+          method="POST"
+        >
+          <!-- Formspree config — sends to your Gmail -->
+          <input type="hidden" name="_replyto" value="hello.devzync@gmail.com" />
+          <input type="hidden" name="_subject" value="New client enquiry — devZync website 🖤" />
+          <!-- After submit, show a thank you page -->
+          <input type="hidden" name="_next" value="https://YOUR_USERNAME.github.io/devzync/thankyou.html" />
+
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
+          </div>
+          <div class="form-group">
+            <select name="business_type">
+              <option value="">Type of Business</option>
+              <option>Restaurant / Café</option>
+              <option>Salon / Spa</option>
+              <option>Retail Shop</option>
+              <option>Service Business</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Tell us about your business..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn-primary full">Send Message ✦</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg width="24" height="24" viewBox="0 0 28 28">
+          <polygon points="17,2 7,15 13,15 3,26 21,13 15,13 25,2" fill="#C9A96E"/>
+        </svg>
+        <span>dev<span>Zync</span></span>
+      </div>
+      <p class="footer-copy">© 2025 devZync · Sri Lanka · All rights reserved</p>
+      <p class="footer-tag">We build. You grow. ✦</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

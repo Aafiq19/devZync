@@ -1,0 +1,5 @@
+# Files Docker should ignore when building
+.git
+.gitignore
+README.md
+*.md
