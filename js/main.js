@@ -2,108 +2,11 @@
 // devZync — Main JavaScript
 // ============================================
 
-// ---- SMOOTH MOMENTUM SCROLL ----
-// This creates the slow-to-fast premium scroll effect
-// The page "catches up" to where you're scrolling — like a luxury feel
-
-const html = document.documentElement;
-let currentY = window.scrollY;
-let targetY  = window.scrollY;
-let isScrolling = false;
-
-// Speed: 0.05 = cinematic slow | 0.09 = smooth | 0.15 = snappy
-const EASE = 0.09;
+// ---- SMOOTH SCROLL ----
+// CSS handles smooth scrolling — works on Docker, GitHub Pages, everywhere
+document.documentElement.style.scrollBehavior = 'smooth';
 
 const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-
-if (!isMobile) {
-
-  document.body.style.overflow = 'hidden';
-
-  const scroller = document.createElement('div');
-  scroller.id = 'smooth-scroller';
-  scroller.style.cssText = `
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    will-change: transform;
-  `;
-
-  while (document.body.firstChild) {
-    scroller.appendChild(document.body.firstChild);
-  }
-  document.body.appendChild(scroller);
-
-  const spacer = document.createElement('div');
-  spacer.id = 'scroll-spacer';
-  document.body.appendChild(spacer);
-
-  function updateSpacerHeight() {
-    spacer.style.height = scroller.scrollHeight + 'px';
-  }
-
-  // Wait for fonts & images to load before calculating height
-  // This fixes the "stuck scroll" issue on GitHub Pages
-  updateSpacerHeight();
-  window.addEventListener('load', () => {
-    updateSpacerHeight();
-    setTimeout(updateSpacerHeight, 500);
-    setTimeout(updateSpacerHeight, 1500);
-  });
-  window.addEventListener('resize', updateSpacerHeight);
-  new ResizeObserver(updateSpacerHeight).observe(scroller);
-
-  window.addEventListener('scroll', () => {
-    targetY = window.scrollY;
-    if (!isScrolling) {
-      isScrolling = true;
-      requestAnimationFrame(smoothLoop);
-    }
-  }, { passive: true });
-
-  function smoothLoop() {
-    const diff = targetY - currentY;
-    currentY += diff * EASE;
-
-    if (Math.abs(diff) < 0.5) {
-      currentY = targetY;
-      isScrolling = false;
-      scroller.style.transform = `translateY(${-currentY}px)`;
-      return;
-    }
-
-    scroller.style.transform = `translateY(${-currentY}px)`;
-    requestAnimationFrame(smoothLoop);
-  }
-
-  // Fix anchor links to work with custom scroll
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        const top = target.getBoundingClientRect().top + currentY;
-        window.scrollTo({ top, behavior: 'instant' });
-        targetY = top;
-      }
-    });
-  });
-
-  // Reveal check on every frame for desktop
-  function checkReveals() {
-    revealEls.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.88 && rect.bottom > 0) {
-        el.classList.add('visible');
-      }
-    });
-    requestAnimationFrame(checkReveals);
-  }
-  requestAnimationFrame(checkReveals);
-
-} else {
-  html.style.scrollBehavior = 'smooth';
-}
 
 // ---- CUSTOM CURSOR ----
 const cursor = document.querySelector('.cursor');
@@ -155,18 +58,16 @@ const revealEls = document.querySelectorAll(
 );
 revealEls.forEach(el => el.classList.add('reveal'));
 
-// Mobile uses IntersectionObserver, desktop uses checkReveals() above
-if (isMobile) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
-}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealEls.forEach(el => observer.observe(el));
 
 // ---- STAGGERED SERVICE CARDS ----
 document.querySelectorAll('.service-card').forEach((card, i) => {
